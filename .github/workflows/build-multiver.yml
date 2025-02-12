@@ -79,18 +79,18 @@ jobs:
                 run: chmod +x ./gradlew
 
             -   name: gradle murders github servers
-                run: ./gradlew assemble -PmcVer="1.20.1"
+                run: ./gradlew assemble -PmcVer="1.21.1"
 
             - name: Publish Fabric
               env:
                 MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
                 CURSEFORGE_TOKEN: ${{ secrets.CF_API_TOKEN }}
                 MAVEN_TOKEN: ${{ secrets.MAVEN_TOKEN }}
-              run: ./gradlew -PmcVer="1.20.1" :fabric:build :fabric:publish :fabric:publishMods
+              run: ./gradlew -PmcVer="1.21.1" :fabric:build :fabric:publish :fabric:publishMods
 
             - name: Publish Forge
               env:
                 MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
                 CURSEFORGE_TOKEN: ${{ secrets.CF_API_TOKEN }}
                 MAVEN_TOKEN: ${{ secrets.MAVEN_TOKEN }}
-              run: ./gradlew -PmcVer="1.20.1" :forge:build :forge:publish :forge:publishMods
+              run: ./gradlew -PmcVer="1.21.1" :forge:build :forge:publish :forge:publishMods
